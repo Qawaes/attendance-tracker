@@ -1,8 +1,17 @@
+import Student from './Student'; 
 
 function StudentList({ students, onToggle }) {
   return (
     <div>
-      {/* TODO 4: Map through students and render Student components */}
+      <ul>
+        {students.map(student => (
+          <Student 
+            key={student.id} 
+            student={student} 
+            onToggle={onToggle} 
+          />
+        ))}
+      </ul>
     </div>
   );
 }
